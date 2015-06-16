@@ -168,6 +168,13 @@ describe 'Merge', ->
 
 		expect(expected).to.deep.equal merge(o, a, b)
 
+	it 'throws when merging is impossible', ->
+		o = 'o'
+		a = 'a'
+		b = 'b'
+
+		expect(merge(o, a, b)).to.throw(Error)
+
 	it 'null values in object', ->
 		o = key1: null
 		a = key1: key2: null
